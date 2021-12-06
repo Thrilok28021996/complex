@@ -22,3 +22,17 @@ after_success:
   - docker push thrilok28021996/multi-nginx
   - docker push thrilok28021996/multi-server
   - docker push thrilok28021996/multi-worker
+
+
+deploy:
+  provider: elasticbeanstalk
+  region: region
+  app: multi-docker
+  env: MultiDocker-env
+  bucket_name: elastic bucket name
+  bucket_path: docker-multi
+  on:
+    branch:master
+  access_key_id: $AWS_ACESS_KEY
+  secret_access_key:
+    secure: $ AWS_ACESS_KEY

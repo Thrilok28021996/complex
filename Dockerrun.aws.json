@@ -5,19 +5,22 @@
 			"name": "client",
 			"image":"thrilok28021996/multi-client",
 			"hostname":"client",
-			"essential" : false
+			"essential" : false,
+			"memory": 128
 		},
 		{
 			"name":"server",
 			"image":"thrilok28021996/multi-server",
 			"hostname":"api",
-			"essential": false
+			"essential": false,
+			"memory": 128
 		},
 		{
 			"name":"worker",
 			"image":"thrilok28021996/multi-worker",
 			"hostname":"woorker",
-			"essential":false
+			"essential":false,
+			"memory": 128
 		}
 		{
 			"name":"nginx",
@@ -26,7 +29,8 @@
 			"portmappings":[
 			{
 				"hostPort":80,
-				"containerPort":80
+				"containerPort":80,
+				"memory": 128
 			}
 		],
 			"links": ["client","server"]
